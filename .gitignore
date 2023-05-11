@@ -2,9 +2,5 @@
 # or SQL set up files
 data
 
-# Ignore any python package
-# files
-python/__pycache__
-
 # Ignore AWS Login details
-python/AWS_login.py
+AWS_login.py
