@@ -1,2 +1,7 @@
 shiny
 pandas
+mysql-connector-python
+Jinja2
+htmltools
+pathlib
+json

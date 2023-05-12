@@ -4,3 +4,9 @@ data
 
 # Ignore AWS Login details
 AWS_login.py
+
+# Ignore test files
+*.ipynb
+*json
+node_modules
+*pycache*
