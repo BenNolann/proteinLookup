@@ -1,8 +1,7 @@
 ---
 title: "proteinLookup: Data download and SQL dump creation"
 output:
-  html_document:
-    df_print: paged
+  rmarkdown::github_document  
 date: "2023-05-15"
 ---
 
