@@ -4,8 +4,8 @@
 # local file AWS_login.py
 from AWS_login import connect_to_db
 
-# Import the shiny module for 
-# creation of this Python for
+# Import the shiny module for
+# creation of Python for
 # Shiny application
 from shiny import App, render, ui, reactive
 
