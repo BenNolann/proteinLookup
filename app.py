@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 
+# Import AWS login connection from
+# local file AWS_login.py
 from AWS_login import connect_to_db
-import pandas as pd
+
+# Import the shiny module for 
+# creation of this Python for
+# Shiny application
 from shiny import App, render, ui, reactive
+
+# Import multiple packages for
+# data and string handling
+import pandas as pd
 from htmltools import *
 from pathlib import Path
 import json
