@@ -62,9 +62,14 @@ peak = "allPeaks_light.hg38.50.sorted.bed"
 # Print out all peaks until then
 cutoff = 'DRX127823' #1001st entry
 
+# Open peaks file and take every 
+# line until the 1001st line is 
+# reached. Now we have a matching
+# peaks and experiment file
 with open(peak) as fp:
     for line in fp:
         elem = line.split('\t')
+        # If study_id == "DRX127823"
         if(elem[3] == cutoff ):
             break
         print(line.rstrip())
@@ -93,6 +98,9 @@ created.
 ``` python
 #!/usr/bin/env python3
 
+# Create the peaks SQL table,
+# but first drop it if it
+# exists
 print(
 """
 DROP TABLE IF EXISTS all_samples_peaks;
@@ -109,6 +117,10 @@ CREATE TABLE all_samples_peaks(
 
 data = "allpeaks1000experiments.bed"
 
+# Loop through the peaks file
+# for 1000 experiments and create an
+# insert statement for each peak including the
+# chr, start, stop, strength, study_id
 with open(data) as fp:
     for line in fp:
         elements = line.split("\t")
@@ -121,7 +133,10 @@ with open(data) as fp:
               )
         
 
-
+# As above, create a table for the 
+# experiments file, dropping the table
+# if it already exists. Note: some samples
+# have VERY long descriptions.
 print(
 """
 DROP TABLE IF EXISTS all_samples_experiments;
@@ -139,6 +154,10 @@ CREATE TABLE all_samples_experiments(
 
 data2 = "experimentList1000lines.tab"
 
+# Loop through each experiment, creating
+# an insert statement for each line,
+# containing study_id, antibody,
+# tissue, cell_type, description
 with open(data2) as fp:
     for line in fp:
         elements = line.split("\t")
